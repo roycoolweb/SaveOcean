@@ -26,23 +26,22 @@ export default function Gallery() {
             </div>
 
             <div className='row'>
-                <div className='col-4'>
-                    <div className='card'>
-                        <div className='row g-0'>
-                            {o.map(i => {
-                                return <div className='card-body' key={i.data.id}>
-                                    <h5 className='card-title'>{i.data.name}</h5>
-                                    <p className='card-text'>{i.data.detail}</p>
-                                    <p className='card-text'>{i.data.location}</p>
-                                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Donate
-                                    </button>
+                {o.map(i => {
+                    return <div className='col-4'>
+                            <div className='card'>
+                                <div className='row g-0'>
+                                    <div className='card-body' key={i.data.id}>
+                                            <h5 className='card-title'>{i.data.name}</h5>
+                                            <p className='card-text'>{i.data.detail}</p>
+                                            <p className='card-text'>{i.data.location}</p>
+                                            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                Donate
+                                            </button>
+                                        </div>
                                 </div>
-                            })}
-                            
+                            </div>
                         </div>
-                    </div>
-                </div>
+                })}
             </div>
             <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">

@@ -33,7 +33,7 @@ export default function Register() {
     }
 
     const create = async () => {
-        await db.collection("Ocean").create(["0", "Blue Ocean", "OOOOOOOOO", "Nowhere"])
+        await db.collection("Ocean").create([address, name, detail, locaation])
     }
 
     return (
