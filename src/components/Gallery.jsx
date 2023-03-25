@@ -32,14 +32,35 @@ export default function Gallery() {
                             {o.map(i => {
                                 return <div className='card-body' key={i.data.id}>
                                     <h5 className='card-title'>{i.data.name}</h5>
+                                    <p className='card-text'>{i.data.detail}</p>
                                     <p className='card-text'>{i.data.location}</p>
-                                    <div className='d-grid gap-2'>
-                                        <Link to='/gallery' className='btn btn-primary btn-block'>View</Link>
-                                    </div>
+                                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Donate
+                                    </button>
                                 </div>
                             })}
                             
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">Donate to Ocean</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                    <div className="input-group mb-3">
+                        <input type="text" className="form-control" aria-label="Amount" aria-describedby="basic-addon2" />
+                        <span className="input-group-text" id="basic-addon2">ETH</span>
+                    </div>
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Donate</button>
+                    </div>
                     </div>
                 </div>
             </div>
