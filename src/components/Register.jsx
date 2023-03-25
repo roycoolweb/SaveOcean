@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { Polybase } from "@polybase/client"
 
 const db = new Polybase({
@@ -6,6 +6,11 @@ const db = new Polybase({
 });
 
 export default function Register() {
+    const [name, settname] = useState("")
+    const [detail, setdetail] = useState("")
+    const [address, setaddress] = useState("")
+    const [location, setlocation] = useState("")
+
     const collection = async() => {
         await db.applySchema(`
             @public
@@ -38,19 +43,25 @@ export default function Register() {
                 <div className="mb-3 row">
                     <label for="name" className="col-sm-2 col-form-label">Name</label>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" id="name" />
+                        <input type="text" className="form-control" id="name" value={name} />
                     </div>
                 </div>
                 <div className="mb-3 row">
                     <label for="detail" className="col-sm-2 col-form-label">Detail</label>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" id="detail" />
+                        <input type="text" className="form-control" id="detail" value={detail} />
+                    </div>
+                </div>
+                <div className="mb-3 row">
+                    <label for="location" className="col-sm-2 col-form-label">Location</label>
+                    <div className="col-sm-10">
+                        <input type="text" className="form-control" id="location" value={location} />
                     </div>
                 </div>
                 <div className="mb-3 row">
                     <label for="address" className="col-sm-2 col-form-label">Address</label>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" id="address" />
+                        <input type="text" className="form-control" id="address" value={address} />
                     </div>
                 </div>
             </form>
